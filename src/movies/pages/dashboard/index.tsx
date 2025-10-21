@@ -1,7 +1,9 @@
+import Typography from '@mui/material/Typography'
+
 export default function Dashboard() {
   return (
     <header>
-      <h1>Dashboard</h1>
+      <Typography variant="h3">Dashboard</Typography>
     </header>
   )
 }
