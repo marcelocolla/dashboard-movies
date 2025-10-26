@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { MaterialReactTable, useMaterialReactTable } from 'material-react-table'
 import { Button, Stack, TextField } from '@mui/material'
-import { Search } from '@mui/icons-material'
+import Search from '@mui/icons-material/Search'
 import { Panel } from '~/movies/components/Panel'
 import { findWinnersByYear } from '~/movies/services/list-movies'
 import { tableMinimalConfig } from '~/app/core/constants/table'
@@ -43,12 +43,13 @@ export function ListMovieWinners() {
           fullWidth
           size="small"
           type="number"
+          name="search"
           value={year}
           placeholder="Search by year"
           onChange={handleChange}
           error={rawValue.length > MAX_CHAR}
         />
-        <Button type="submit" variant="contained" disabled={!isValid}>
+        <Button type="submit" variant="contained" disabled={!isValid} data-testid="search-button">
           <Search />
         </Button>
       </Stack>
