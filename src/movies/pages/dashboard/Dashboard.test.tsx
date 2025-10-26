@@ -1,8 +1,15 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { renderProvider } from '@testing/wrappers/base-provider'
 
 import Dashboard from './index'
 import { screen } from '@testing-library/dom'
+
+vi.mock('./components/ListMovieWinners', () => ({
+  ListMovieWinners: () => <div data-testid="panel-list-winners-by-year" />,
+}))
+vi.mock('./components/ProducersIntervalBetweenWins', () => ({
+  ProducersIntervalBetweenWins: () => <div data-testid="panel-producer-winners" />,
+}))
 
 describe('Dashboard', () => {
   it('should render all panel on dashboard page', () => {

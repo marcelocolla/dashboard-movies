@@ -11,7 +11,7 @@ export function useTableColumns() {
       },
       {
         header: 'Win Count',
-        accessorFn: (row) => row.winnerCount,
+        accessorKey: 'winnerCount',
         size: 80,
       },
     ],

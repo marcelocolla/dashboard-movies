@@ -26,7 +26,7 @@ export function ProducersIntervalBetweenWins() {
   })
 
   return (
-    <Panel title="Producers with longest and shortest internal between wins">
+    <Panel title="Producers with longest and shortest internal between wins" data-testid="panel-producer-winners">
       <MaximumTitle variant="h6">Maximum</MaximumTitle>
       <MaterialReactTable table={tableMaximum} />
 
