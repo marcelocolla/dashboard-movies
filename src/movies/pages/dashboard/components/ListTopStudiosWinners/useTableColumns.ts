@@ -12,6 +12,7 @@ export function useTableColumns() {
       {
         header: 'Win Count',
         accessorFn: (row) => row.winCount,
+        size: 80,
       },
     ],
     [],

@@ -3,6 +3,9 @@ export const tableStandardConfig = {
   enableColumnFilters: false,
   enableBottomToolbar: false,
   enableTopToolbar: false,
+  muiCircularProgressProps: {
+    size: 32,
+  },
 }
 
 export const tableMinimalConfig = {
