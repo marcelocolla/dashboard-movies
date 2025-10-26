@@ -2,6 +2,7 @@ import Grid from '@mui/material/Grid'
 import { Panel } from '~/movies/components/Panel'
 import { ListMultipleWinners } from './components/ListMultipleWinners'
 import { ListTopStudiosWinners } from './components/ListTopStudiosWinners'
+import { ProducersIntervalBetweenWins } from './components/ProducersIntervalBetweenWins'
 
 export default function Dashboard() {
   return (
@@ -13,7 +14,7 @@ export default function Dashboard() {
         <ListTopStudiosWinners />
       </Grid>
       <Grid size={{ md: 6 }}>
-        <Panel title="Producers with longest and shortest internal between wins">[[ list items ]]</Panel>
+        <ProducersIntervalBetweenWins />
       </Grid>
       <Grid size={{ md: 6 }}>
         <Panel title="List movie by year">[[ list items ]]</Panel>
