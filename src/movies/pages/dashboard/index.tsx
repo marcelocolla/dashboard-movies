@@ -8,7 +8,7 @@ const GRID_SIZE = { sm: 12, md: 6 }
 
 export default function Dashboard() {
   return (
-    <Grid container padding={2} spacing={2}>
+    <Grid container padding={2} spacing={2} data-testid="dashboard-container">
       <Grid size={GRID_SIZE}>
         <ListMultipleWinners />
       </Grid>
