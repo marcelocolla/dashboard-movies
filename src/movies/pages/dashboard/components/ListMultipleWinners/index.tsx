@@ -4,7 +4,7 @@ import { yearsWithMultipleWinners } from '~/movies/services/multiple-winners'
 
 import { MaterialReactTable, useMaterialReactTable } from 'material-react-table'
 import { useTableColumns } from './useTableColumns'
-import { tableMinimalConfig } from '~/app/core/constants/table'
+import { tableStandardConfig } from '~/app/core/constants/table'
 
 export function ListMultipleWinners() {
   const { data, isLoading } = useQuery({
@@ -14,7 +14,7 @@ export function ListMultipleWinners() {
   })
   const columns = useTableColumns()
   const table = useMaterialReactTable({
-    ...tableMinimalConfig,
+    ...tableStandardConfig,
     columns,
     data: data.years,
     state: { isLoading, density: 'compact' },
