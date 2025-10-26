@@ -1,18 +1,20 @@
 import { Outlet } from 'react-router'
 import Link from '@mui/material/Link'
-import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import { Navbar } from '~/app/components/Navbar'
-import { AppBarWrapper, ContentWrapper, RootWrapper } from './styles'
+import { LinkedIn } from '@mui/icons-material'
+import { useLocation } from 'react-router'
+import { AppBarWrapper, ContentWrapper, NavbarWrapper, ProfileLink, RootWrapper } from './styles'
 
 export function LayoutRoot() {
+  const location = useLocation()
+
   return (
     <RootWrapper>
-      <AppBarWrapper position="static">
-        <Toolbar>
-          <Typography variant="h4" sx={{ flexGrow: 1 }}>
-            Marcelo Colla
-          </Typography>
+      <AppBarWrapper>
+        <Typography variant="h5">Marcelo Colla</Typography>
+
+        <ProfileLink>
+          <LinkedIn />
           <Link
             href="https://www.linkedin.com/in/marcelocolla/"
             target="_blank"
@@ -22,10 +24,10 @@ export function LayoutRoot() {
           >
             in/marcelocolla
           </Link>
-        </Toolbar>
+        </ProfileLink>
       </AppBarWrapper>
 
-      <Navbar />
+      <NavbarWrapper activeTo={location.pathname} />
 
       <ContentWrapper>
         <Outlet />

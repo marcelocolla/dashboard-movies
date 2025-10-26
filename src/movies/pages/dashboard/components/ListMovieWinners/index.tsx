@@ -8,12 +8,12 @@ import { tableMinimalConfig } from '~/app/core/constants/table'
 import { useTableColumns } from './useTableColumns'
 import { useState } from 'react'
 
-const MIN_CHAR = 4
+const MAX_CHAR = 4
 
 export function ListMovieWinners() {
   const [year, setYear] = useState<number>()
   const rawValue = year?.toString() || ''
-  const isValid = rawValue.length === MIN_CHAR
+  const isValid = rawValue.length === MAX_CHAR
   const { data, isLoading, refetch } = useQuery({
     queryKey: ['movies-winners-by-year', year],
     queryFn: () => findWinnersByYear(year),
@@ -46,7 +46,7 @@ export function ListMovieWinners() {
           value={year}
           placeholder="Search by year"
           onChange={handleChange}
-          error={rawValue.length > MIN_CHAR}
+          error={rawValue.length > MAX_CHAR}
         />
         <Button type="submit" variant="contained" disabled={!isValid}>
           <Search />
