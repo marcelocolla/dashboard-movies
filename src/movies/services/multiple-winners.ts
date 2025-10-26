@@ -1,5 +1,5 @@
 import { httpClient, type Response } from '~/app/core/services/http-client'
-import type { MoviesWithMultipleWinners } from '../types/winners'
+import type { MoviesWithMultipleWinners } from '~/movies/types/winners'
 
 const API_URL = '/movies/yearsWithMultipleWinners'
 
