@@ -6,15 +6,15 @@ describe('Movies routes', () => {
     expect(moviesRoute.children).toHaveLength(2)
   })
 
-  it('should configure dashboard route', async () => {
-    const [dashboard] = moviesRoute.children
+  it('should configure dashboard route', () => {
+    const [dashboard] = moviesRoute.children || []
 
     expect(dashboard.index).toBe(true)
     expect(dashboard.path).toBeUndefined()
   })
 
-  it('should configure movies route', async () => {
-    const [, listMovies] = moviesRoute.children
+  it('should configure movies route', () => {
+    const [, listMovies] = moviesRoute.children || []
     expect(listMovies.index).toBeUndefined()
     expect(listMovies.path).toEqual('filmes')
   })
