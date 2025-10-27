@@ -41,7 +41,7 @@ Antes de começar, certifique-se de ter o seguinte software instalado em sua má
 
 2.  **Package Manager (yarn):**
 
-- Este projeto utiliza **[yarn]**.
+- Este projeto utiliza **yarn**.
 - Verifique a sua versão:
   ```bash
   npm -v  # ou yarn -v ou pnpm -v
@@ -56,7 +56,8 @@ Siga os passos abaixo para instalar e configurar o projeto localmente.
 Abra seu terminal e clone o repositório do projeto:
 
 ```bash
-git clone [https://github.com/marcelocolla/dashboard-movies](https://github.com/marcelocolla/dashboard-movies)
+git clone https://github.com/marcelocolla/dashboard-movies.git
+
 cd dashboard-movies
 ```
 
