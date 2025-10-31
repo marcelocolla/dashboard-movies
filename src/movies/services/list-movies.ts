@@ -8,11 +8,22 @@ type ListAllMoviesArgs = {
   winner?: boolean
   year?: string
 }
-
 type ListAllResponse = Response<MovieListResponse>
+type MoviesColumnFilters = Array<{ id: string; value: unknown }>
 
-export async function listAllMovies(args: ListAllMoviesArgs) {
-  const params = { size: args.pageSize ?? 10, page: args.pageIndex }
+function normalizeColumnFilters(columnFilters?: MoviesColumnFilters) {
+  const initialFilters: Record<string, unknown> = {}
+
+  return columnFilters?.reduce((acc, current) => {
+    if (current.id) acc[current.id] = current.value
+
+    return acc
+  }, initialFilters)
+}
+
+export async function listAllMovies(args: ListAllMoviesArgs, columnFilters?: MoviesColumnFilters) {
+  const parsedFilter = normalizeColumnFilters(columnFilters)
+  const params = { ...parsedFilter, size: args.pageSize ?? 10, page: args.pageIndex }
   const res = await httpClient.get<never, ListAllResponse>('/movies', { params })
 
   return res.data

@@ -23,9 +23,12 @@ describe('ListMovies', () => {
     expect(screen.getByText('Year')).toBeInTheDocument()
     expect(screen.getByText('Title')).toBeInTheDocument()
     expect(screen.getByText('Winner?')).toBeInTheDocument()
-    expect(listAllMoviesSpy).toHaveBeenCalledWith({
-      pageIndex: 1,
-      pageSize: 10,
-    })
+    expect(listAllMoviesSpy).toHaveBeenCalledWith(
+      {
+        pageIndex: 1,
+        pageSize: 10,
+      },
+      [],
+    )
   })
 })

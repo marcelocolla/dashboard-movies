@@ -29,8 +29,8 @@ export function useTableColumns() {
         muiFilterTextFieldProps: { placeholder: 'Yes/No' },
         filterVariant: 'select',
         filterSelectOptions: [
-          { label: 'Yes', value: true },
-          { label: 'No', value: false },
+          { label: 'Yes', value: 'true' },
+          { label: 'No', value: 'false' },
         ],
       },
     ],

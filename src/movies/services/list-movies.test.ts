@@ -23,6 +23,20 @@ describe('listAllMovies', () => {
     })
   })
 
+  it('should call the service with correct filters', async () => {
+    httpClientGET.mockResolvedValueOnce(response)
+    const columnFilters = [
+      { id: 'year', value: '2020' },
+      { id: 'winner', value: 'false' },
+      { id: '', value: 'invalid' },
+    ]
+    await listAllMovies({ pageIndex: 1, pageSize: 10 }, columnFilters)
+
+    expect(httpClientGET).toHaveBeenCalledWith('/movies', {
+      params: { page: 1, size: 10, year: '2020', winner: 'false' },
+    })
+  })
+
   it('should return correct when the service is called successfully', async () => {
     httpClientGET.mockResolvedValueOnce(response)
     const result = await listAllMovies({ pageIndex: 1 })
