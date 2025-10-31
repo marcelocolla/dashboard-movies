@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { httpClient } from '~/app/core/services/http-client'
-import { listAllMovies, findWinnersByYear } from '../list-movies'
+import { listAllMovies, findWinnersByYear } from './list-movies'
 
 vi.mock('~/app/core/services/http-client')
 

@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { httpClient } from '~/app/core/services/http-client'
-import { producersIntervalBetweenWinners } from '../producer-winners'
+import { yearsWithMultipleWinners } from './multiple-winners'
 
 vi.mock('~/app/core/services/http-client')
 
@@ -9,16 +9,16 @@ const response = {
   data: [{ year: 2020, winnerCount: 2 }],
 }
 
-describe('producersIntervalBetweenWinners', () => {
+describe('yearsWithMultipleWinners', () => {
   afterEach(() => {
     vi.clearAllMocks()
   })
 
   it('should return correct when the service is called successfully', async () => {
     httpClientGET.mockResolvedValueOnce(response)
-    const result = await producersIntervalBetweenWinners()
+    const result = await yearsWithMultipleWinners()
 
     expect(result).toStrictEqual(response.data)
-    expect(httpClientGET).toHaveBeenCalledWith('/movies/maxMinWinIntervalForProducers')
+    expect(httpClientGET).toHaveBeenCalledWith('/movies/yearsWithMultipleWinners')
   })
 })
