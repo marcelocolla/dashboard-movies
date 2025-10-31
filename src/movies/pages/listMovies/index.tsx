@@ -15,6 +15,7 @@ export default function ListMovies() {
   const columns = useTableColumns()
   const table = useMaterialReactTable({
     enableTopToolbar: false,
+    manualPagination: true,
     initialState: {
       showColumnFilters: true,
     },
